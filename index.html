@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Leave Management System</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Leave Management System</h1>
+
+        <div class="leave-balance">
+            <h2>Your Leave Balance</h2>
+            <p>Earned Leave: <span id="earnedLeave">10</span> days</p>
+            <p>Casual Leave: <span id="casualLeave">5</span> days</p>
+            <p>Sick Leave: <span id="sickLeave">5</span> days</p>
+        </div>
+
+        <div class="leave-request">
+            <h2>Apply for Leave</h2>
+            <form id="leaveForm">
+                <label for="leaveType">Leave Type:</label>
+                <select id="leaveType" required>
+                    <option value="Earned Leave">Earned Leave</option>
+                    <option value="Casual Leave">Casual Leave</option>
+                    <option value="Sick Leave">Sick Leave</option>
+                    <option value="Leave Without Pay">Leave Without Pay</option>
+                </select>
+                <br><br>
+
+                <label for="startDate">Start Date:</label>
+                <input type="date" id="startDate" required>
+                <br><br>
+
+                <label for="endDate">End Date:</label>
+                <input type="date" id="endDate" required>
+                <br><br>
+
+                <label for="reason">Reason:</label>
+                <textarea id="reason" required></textarea>
+                <br><br>
+
+                <label for="yourName">Your Name:</label>
+                <input type="text" id="yourName" required placeholder="Enter your name">
+                <br><br>
+
+                <label for="managerName">Manager's Name:</label>
+                <input type="text" id="managerName" required placeholder="Enter manager's name">
+                <br><br>
+
+                <button type="submit">Submit Leave Request</button>
+            </form>
+        </div>
+
+        <div class="confirmation" id="confirmation" style="display:none;">
+            <h2>Confirm Leave Request</h2>
+            <div id="leaveLetter"></div>
+            <button id="confirmButton">Confirm Submission</button>
+            <button id="cancelButton">Cancel</button>
+        </div>
+
+        <div class="leave-requests">
+            <h2>Leave Requests</h2>
+            <ul id="requestsList"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
